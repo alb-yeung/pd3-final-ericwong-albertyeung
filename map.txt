@@ -1,0 +1,6 @@
+0 = nothing
+1 = wall	
+2 = door
+3 = walkable
+4 = trap
+5 = chest
