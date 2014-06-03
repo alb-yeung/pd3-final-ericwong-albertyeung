@@ -4,3 +4,5 @@ Eric Wong			6.2.2014			Update README and create LOG, wanted to push map but coul
 
 Albert Yeung			6.3.2014			
 Learned how to processing and made the beginning and started trying to piece the project together.
+
+Eric Wong			6.3.2014			Finished the map, altered old MyQueue class to fit project, starting Monster class and the best-first search function it will utilize.
