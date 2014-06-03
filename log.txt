@@ -1,3 +1,6 @@
 NAME				DATE				SHORT DESCRIPTION
 
 Eric Wong			6.2.2014			Update README and create LOG, wanted to push map but couldn't SSH into school comps
+
+Albert Yeung			6.3.2014			
+Learned how to processing and made the beginning and started trying to piece the project together.
