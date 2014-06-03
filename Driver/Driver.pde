@@ -1,3 +1,5 @@
+import java.util.*;
+
 char[][] map = new char[60][60];
 ArrayList<Player> players = new ArrayList<Player>();
 
@@ -19,7 +21,6 @@ void setup(){
   background(0,0,0);
   
   //read the board in
-  /*
   try{
     File f = new File("map.txt");
     Scanner map = new Scanner(f);
@@ -30,7 +31,7 @@ void setup(){
     while(map.hasNextLine()){
       temp = map.nextLine();
       for(int place = 0;place<temp.length();place++){
-        char[x][y]=temp.charAt(place);
+        map[x][y]=temp.charAt(place);
         y++;
       }
       x++;
@@ -47,7 +48,6 @@ void setup(){
   }while(map[x][y]!='3');
   //place(x,y);
   //reveal(x,y);
-  */
 }
 
 void draw(){
