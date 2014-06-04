@@ -7,8 +7,8 @@ public class MyQueue {
 	tail = null;
     }
 
-    public void enqueue(String s) {
-	Node n = new Node(s);
+    public void enqueue(int x, int y) {
+	Node n = new Node(x, y);
 	if (head == null) {
 	    head = n;
 	    tail = n;
@@ -42,19 +42,5 @@ public class MyQueue {
 	    return head.getData();
     }
 
-    public String toString() {
-	String s = "Head --> ";
-	if (head == null) {
-	    s = s + "Ceci est nes pa une string --> ";
-	}
-	Node temp = head;
-	while (temp != null) {
-	    s = s + temp.getData() + " --> ";
-	    temp = temp.getNext();
-	}
-	s = s.substring(0, s.length()-4);
-	s = s + "<-- Tail ";
-	return s;
-    }
-
+   
 }
