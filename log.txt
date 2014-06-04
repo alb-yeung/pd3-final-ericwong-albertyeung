@@ -6,3 +6,5 @@ Albert Yeung			6.3.2014
 Learned how to processing and made the beginning and started trying to piece the project together.
 
 Eric Wong			6.3.2014			Finished the map, altered old MyQueue class to fit project, starting Monster class and the best-first search function it will utilize.
+
+Eric Wong			6.4.2014			Did most of the best-first search function. Started a new class Box that will be expanded to represent each element of the map. This will make the search function most easier to code and clean up other parts.
