@@ -1,13 +1,15 @@
+import java.awt.image.*;
+import javax.imageio.*;
+
 public class Box {
 
     boolean walkable;
     int x, y;
+    BufferedImage pic;
 
     public Box (int n, int x, int y) {
 	if (n == 0) {
-	    walkable = false;
-	    this.x = x;
-	    this.y = y;
+	    Empty e = new Empty(x, y);
 	}
 	if (n == 1) {
 	    Wall w = new Wall(x, y);
@@ -16,9 +18,7 @@ public class Box {
 	    Door d = new Door(x, y);
 	}
 	if (n == 3) {
-	    walkable = true;
-	    this.x = x;
-	    this.y = y;
+	    Floor f = new Floor(x, y);
 	}
 	if (n == 4) {
 	    Trap t = new Trap(x, y);
@@ -28,5 +28,67 @@ public class Box {
 	}
     }
 
+    public int getX() {
+	return x;
+    }
+
+    public int getY() {
+	return y;
+    }
+
+
+    //need to do graphics part for these
+    public class Empty extends Box {
+
+	public Empty(int x, int y) {
+	    this.x = x;
+	    this.y = y;
+	    this.walkable = false;
+	    try {
+		pic = ImageIO.read(new File("empty.png"));
+	    } catch (Exception e) {}
+	}
+
+    }
+
+    public class Wall extends Box {
+
+	public Wall(int x, int y) {
+	    this.x = x;
+	    this.y = y;
+	    this.walkable = false;
+	}
+
+    }
+
+    public class Floor extends Box {
+
+	public Floor(int x, int y) {
+	    this.x = x;
+	    this.y = y;
+	    this.walkable = true;
+	}
+
+    }
+
+    public class Trap extends Box {
+
+	public Trap(int x, int y) {
+	    this.x = x;
+	    this.y = y;
+	    this.walkable = true;
+	}
+
+    }
+
+    public class Chest extends Box {
+
+	public Chest(int x, int y) {
+	    this.x = x;
+	    this.y = y;
+	    this.walkable = true;
+	}
+
+    }
 
 }

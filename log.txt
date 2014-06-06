@@ -8,3 +8,5 @@ Learned how to processing and made the beginning and started trying to piece the
 Eric Wong			6.3.2014			Finished the map, altered old MyQueue class to fit project, starting Monster class and the best-first search function it will utilize.
 
 Eric Wong			6.4.2014			Did most of the best-first search function. Started a new class Box that will be expanded to represent each element of the map. This will make the search function most easier to code and clean up other parts.
+
+Eric Wong			6.6.2014			Created Box class and its extensions. Need to learn how to associate an image with them. Altered helper classes so that they work with the search which uses the Box class. Added attack method for Monster class.

@@ -3,21 +3,19 @@ import java.util.*;
 
 public class Node {
 
-    private int x, y;
+    private Box b;
     private Node next;
 
-    public Node(int x, int y) {
-	this.x = x;
-	this.y = y;
+    public Node(Box b) {
+	this.b = b;
 	next = null;
     }
 
-    public void setData(int x, int y) {
-	this.x = x;
-	this.y = y;
+    public void setData(Box b) {
+	this.b = b;
     }
-    public String getData() {
-	return "x = " + x + "y = " + y;
+    public Box getData() {
+	return b;
     }
     public void setNext(Node n) {
 	next = n;

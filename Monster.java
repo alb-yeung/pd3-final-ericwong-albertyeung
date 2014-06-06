@@ -1,3 +1,5 @@
+import java.util.*;
+
 public class Monster extends Player {
 
     private MyQueue frontier;
@@ -8,8 +10,8 @@ public class Monster extends Player {
 	this.x = x;
 	this.y = y;
 	frontier = new MyQueue();
-	dam = 3;
-	health = 5;
+	dam = (int)(Math.random()*5);
+	health = 10 + (int)(Math.random()*15);
     }
 
     public void move(Player p) {
@@ -18,11 +20,10 @@ public class Monster extends Player {
 	targetX = p.getX();
 	targetY = p.getY();
 
-
 	//we need a class that holds the x and y that the player instances will store as an instance variable. this would make this whole calculating part much simpler. We should name the class Box
 
 	//order neighboring squares based on distance
-	MinHeap order = new MinHeap();
+	ArrayList<Box> order = new ArrayList<Box>();
 	int dist;
 	int tempX, tempY;
 	for (int a=-1;a<2;a++) {
@@ -30,17 +31,37 @@ public class Monster extends Player {
 		tempX = x + a;
 		tempY = y + b;
 		dist = (tempX-targetX)*(tempX-targetX) + (tempY-targetY)*(tempY-targetY);
-		order.insert(dist);
+		//add onto ordering only if the square can be walked upon
+		if (map[a][b].walkable())
+		    order.set(dist, map[a][b]);
 	    }
 	}
 
 	//transfer info obtained above into frontier
-	while (order.getMax() != -1) 
-	    frontier.enqueue(order.removeMax());
+	for (Box place : order) 
+	    frontier.enqueue(place);
 
-	//call dequeue to get best move
+	//call dequeue to get best move and set monster coordinates to coordinate of box
+	Box dest = frontier.dequeue();
+	this.setX(dest.getX());
+	this.setY(dest.getY());
     }
 
-    //need damage and health variables
+     public void attack(Player p) {
+	int targetX = p.getX();
+	int targetY = p.getY();
+       	//player must be in within a two block radius
+	if ((Math.abs(this.x - targetX) < 3) && (Math.abs(this.y - targetY) < 3)) {
+	    p.setHealth(p.getHealth()-dam);
+	}
+    }
+
+    public int getHealth() {
+	return health;
+    }
+
+    public void setHealth(int h) {
+	health = h;
+    }
 
 }

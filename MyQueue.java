@@ -7,8 +7,8 @@ public class MyQueue {
 	tail = null;
     }
 
-    public void enqueue(int x, int y) {
-	Node n = new Node(x, y);
+    public void enqueue(Box b) {
+	Node n = new Node(b);
 	if (head == null) {
 	    head = n;
 	    tail = n;
@@ -19,16 +19,16 @@ public class MyQueue {
 	}
     }
 
-    public String dequeue() {
-	String s = null;
+    public Box dequeue() {
+	Box first = null;
 	if (head != null) {
-	    s = head.getData();
+	    first = head.getData();
 	    head = head.getNext();
 	}
 	if (head == null) {
 	    tail = null;
 	}
-	return s;
+	return first;
     }
 
     public boolean isEmpty() {
