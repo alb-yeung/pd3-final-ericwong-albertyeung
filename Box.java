@@ -36,6 +36,10 @@ public class Box {
 	return y;
     }
 
+    public void graphics() {
+	//depending on type of box, will create rect filled with different image
+    }
+
 
     //need to do graphics part for these
     public class Empty extends Box {
@@ -47,6 +51,10 @@ public class Box {
 	    try {
 		pic = ImageIO.read(new File("empty.png"));
 	    } catch (Exception e) {}
+	}
+
+	public void graphics() {
+
 	}
 
     }

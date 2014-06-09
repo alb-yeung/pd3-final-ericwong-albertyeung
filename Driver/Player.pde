@@ -1,6 +1,7 @@
 public class Player{
   int x,y;
   String name;
+  int dam, health;
   
   public Player(String n){
     name = n;
@@ -12,5 +13,9 @@ public class Player{
     return x;
   }public int gety(){
     return y;
+  }public void setHealth(int h) {
+    health = h;
+  }public int getHealth() {
+    return health;
   }
 }

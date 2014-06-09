@@ -17,8 +17,8 @@ public class Monster extends Player {
     public void move(Player p) {
 	//best-first search: just add to fronteir based on distance to player
 	int targetX, targetY;
-	targetX = p.getX();
-	targetY = p.getY();
+	targetX = p.getx();
+	targetY = p.gety();
 
 	//we need a class that holds the x and y that the player instances will store as an instance variable. this would make this whole calculating part much simpler. We should name the class Box
 
@@ -43,13 +43,13 @@ public class Monster extends Player {
 
 	//call dequeue to get best move and set monster coordinates to coordinate of box
 	Box dest = frontier.dequeue();
-	this.setX(dest.getX());
-	this.setY(dest.getY());
+	this.setx(dest.getX());
+	this.sety(dest.getY());
     }
 
      public void attack(Player p) {
-	int targetX = p.getX();
-	int targetY = p.getY();
+	int targetX = p.getx();
+	int targetY = p.gety();
        	//player must be in within a two block radius
 	if ((Math.abs(this.x - targetX) < 3) && (Math.abs(this.y - targetY) < 3)) {
 	    p.setHealth(p.getHealth()-dam);

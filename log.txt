@@ -11,4 +11,6 @@ Eric Wong			6.4.2014			Did most of the best-first search function. Started a new
 
 Eric Wong			6.6.2014			Created Box class and its extensions. Need to learn how to associate an image with them. Altered helper classes so that they work with the search which uses the Box class. Added attack method for Monster class.
 
-Albert Yeung		6.8.2014			Fixed up the Driver class to make it accept keyboard functions. Also, all the other classes need to be made in the processing or at least the extension needs to be changed to .pde. Not really sure how to input the Box class into the project because can't make arrays of Box class.
+Albert Yeung			6.8.2014			Fixed up the Driver class to make it accept keyboard functions. Also, all the other classes need to be made in the processing or at least the extension needs to be changed to .pde. Not really sure how to input the Box class into the project because can't make arrays of Box class.
+
+Eric Wong			6.9.2014			Starting graphics. need to use createImage() function and rectMode(). Going to need to draw the boxes and import images. array of box class works.

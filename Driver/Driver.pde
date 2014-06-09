@@ -78,6 +78,17 @@ void setup(){
   */
   //place(x,y);
   //reveal(x,y);
+  
+  //create a map of Boxes
+  /*
+  Box[][] temp = new Box[60][60];
+  for (int r=0;r<map.length;r++) {
+    for (int c=0;c<map[r].length;c++) {
+      temp[r][c] = new Box(map[r][c], r, c);
+      temp[r][c].graphics(); //this method in Box class will create a rec in screen filled by image      
+    }
+  }
+  */
 }
 
 void draw(){
