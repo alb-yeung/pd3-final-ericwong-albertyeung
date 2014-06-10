@@ -5,6 +5,7 @@ ArrayList<Player> players = new ArrayList<Player>();
 int x = 0;
 int y = 0;
 boolean newkey = false;
+int fillcolor = 0;
 //
 
 
@@ -24,6 +25,7 @@ void setup(){
   size(600,800);
   noStroke();
   background(0);
+  fillcolor = 126;
   
   //read the board in
   /*
@@ -45,6 +47,7 @@ void setup(){
     }
   }catch(Exception e){System.out.println("exception");};
   */
+  
   /*
   int x = 0;
   int y = 0;
@@ -103,7 +106,8 @@ void draw(){
      }
    }
    */
-   if(newkey = true){
+   if(newkey == true){
+     fill(fillcolor);
      rect(x,y,10,10);
      newkey = false;
    }
@@ -111,10 +115,9 @@ void draw(){
 }
 
 void keyPressed(){
-  fill(126);
   System.out.println(key);
   if(key == 's'){
-    y = y-10;
+    y = y+10;
     newkey = true;
   }else if(key == 'd'){
     x = x + 10;
@@ -123,7 +126,9 @@ void keyPressed(){
     x = x - 10;
     newkey = true;
   }else if(key == 'w'){
-    y = y + 10;
+    y = y - 10;
     newkey = true;
+  }else if(key =='j'){
+    fillcolor = (int)(Math.random()*255);
   }
 }
