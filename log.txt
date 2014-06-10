@@ -16,3 +16,5 @@ Albert Yeung			6.8.2014			Fixed up the Driver class to make it accept keyboard f
 Eric Wong			6.9.2014			Starting graphics. need to use createImage() function and rectMode(). Going to need to draw the boxes and import images. array of box class works.
 
 Eric Wong			6.10.2014			Began drawing the different types of boxes in GIMP. They are looking fine.
+
+Albert Yeung		6.10.2014			Moved .java files to .pde files. Fixed the Box and the Item classes. Need to start to draw in the board.
