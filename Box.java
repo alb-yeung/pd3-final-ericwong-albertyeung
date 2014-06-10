@@ -1,11 +1,15 @@
 import java.awt.image.*;
 import javax.imageio.*;
+import java.io.*;
 
 public class Box {
 
     boolean walkable;
     int x, y;
     BufferedImage pic;
+
+    public Box(){
+    }
 
     public Box (int n, int x, int y) {
 	if (n == 0) {
@@ -15,17 +19,22 @@ public class Box {
 	    Wall w = new Wall(x, y);
 	}
 	if (n == 2) {
-	    Door d = new Door(x, y);
+	    //Door d = new Door(x, y);
 	}
 	if (n == 3) {
 	    Floor f = new Floor(x, y);
 	}
 	if (n == 4) {
-	    Trap t = new Trap(x, y);
+	    //Trap t = new Trap(x, y);
 	}
 	if (n == 5) {
 	    Chest c = new Chest(x, y);
 	}
+    }
+
+    public Box(int x, int y){
+	this.x = x;
+	this.y = y;
     }
 
     public int getX() {
