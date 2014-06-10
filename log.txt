@@ -14,3 +14,5 @@ Eric Wong			6.6.2014			Created Box class and its extensions. Need to learn how t
 Albert Yeung			6.8.2014			Fixed up the Driver class to make it accept keyboard functions. Also, all the other classes need to be made in the processing or at least the extension needs to be changed to .pde. Not really sure how to input the Box class into the project because can't make arrays of Box class.
 
 Eric Wong			6.9.2014			Starting graphics. need to use createImage() function and rectMode(). Going to need to draw the boxes and import images. array of box class works.
+
+Eric Wong			6.10.2014			Began drawing the different types of boxes in GIMP. They are looking fine.
