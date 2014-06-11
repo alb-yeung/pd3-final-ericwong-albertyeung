@@ -6,7 +6,7 @@ public class Box {
 
     boolean walkable;
     int x, y;
-    BufferedImage pic;
+    PImage pic;
 
     public Box(){
     }
@@ -46,7 +46,8 @@ public class Box {
     }
 
     public void graphics() {
-  //depending on type of box, will create rect filled with different image
+      //depending on type of box, will create rect filled with different image
+      image(pic, this.getX(), this.getY(), 10, 10);
     }
 
 
@@ -58,15 +59,9 @@ public class Box {
       this.y = y;
       this.walkable = false;
       try {
-    pic = ImageIO.read(new File("empty.png"));
+        pic = loadImage("empty.png");
       } catch (Exception e) {}
   }
-
-  public void graphics() {
-
-  }
-
-    }
 
     public class Wall extends Box {
 
@@ -74,6 +69,9 @@ public class Box {
       this.x = x;
       this.y = y;
       this.walkable = false;
+      try {
+        pic = loadImage("wall.png");
+      } catch (Exception e) {}
   }
 
     }
@@ -84,6 +82,9 @@ public class Box {
       this.x = x;
       this.y = y;
       this.walkable = true;
+      try {
+        pic = loadImage("floor.png");
+      } catch (Exception e) {}
   }
 
     }
@@ -94,6 +95,9 @@ public class Box {
       this.x = x;
       this.y = y;
       this.walkable = true;
+      try {
+        pic = loadImage("trap.png");
+      } catch (Exception e) {}
   }
 
     }
@@ -104,6 +108,9 @@ public class Box {
       this.x = x;
       this.y = y;
       this.walkable = true;
+      try {
+        pic = loadImage("chest.png");
+      } catch (Exception e) {}
   }
 
     }

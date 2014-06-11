@@ -6,6 +6,7 @@ int x = 0;
 int y = 0;
 boolean newkey = false;
 int fillcolor = 0;
+MyQueue fronteir = new MyQueue();
 //
 
 
@@ -91,7 +92,14 @@ void setup(){
       temp[r][c].graphics(); //this method in Box class will create a rec in screen filled by image      
     }
   }
+  
+  //this method will update images to show where everything is, what is revealed etc.
+  updateBoard();
   */
+}
+
+void updateBoard() {
+  
 }
 
 void draw(){
