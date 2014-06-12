@@ -96,6 +96,19 @@ void setup(){
   //this method will update images to show where everything is, what is revealed etc.
   updateBoard();
   */
+  
+  /*
+  //running game
+  while (true) {
+    udpateBoard()
+    for (int r=0;r<map.length;r++) {
+      for (int c=0;c<map[r].length;c++) {
+        map[r][c].action();   
+      }
+    }
+  }
+  
+  */
 }
 
 void updateBoard() {
@@ -126,20 +139,29 @@ void draw(){
      
 }
 
+//added checking to make sure the move is possible
 void keyPressed(){
   System.out.println(key);
   if(key == 's'){
-    y = y+10;
-    newkey = true;
+    if (map[x][y+1].canWalk() && !((y+1)>59)) {
+      y = y+10;
+      newkey = true;
+    }
   }else if(key == 'd'){
-    x = x + 10;
-    newkey = true;
+    if (map[x+1][y].canWalk() && !((x+1)>59)) {
+      x = x + 10;
+      newkey = true;
+    }
   }else if(key == 'a'){
-    x = x - 10;
-    newkey = true;
+    if (map[x-1][y].canWalk() && !((x-1)<0)) {
+      x = x - 10;
+      newkey = true;
+    }
   }else if(key == 'w'){
-    y = y - 10;
-    newkey = true;
+    if (map[x][y-1].canWalk() && !((y-1)<0)) {
+      y = y - 10;
+      newkey = true;
+    }
   }else if(key =='j'){
     fillcolor = (int)(Math.random()*255);
   }

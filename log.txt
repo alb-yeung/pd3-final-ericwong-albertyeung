@@ -20,3 +20,5 @@ Eric Wong			6.10.2014			Began drawing the different types of boxes in GIMP. They
 Albert Yeung		6.10.2014			Moved .java files to .pde files. Fixed the Box and the Item classes. Need to start to draw in the board.
 
 Eric Wong			6.11.2014			Finished drawing all the images needed. Box class's graphics function will load an image to be displayed. I think we need to rescale the x and y coordinates of the boxes so that they match up to due to pixels. Need to write an updateBoard() function in Driver which will be run constantly to show where everything is.
+
+Eric Wong			6.12.2014			Added action() functions in Box class that varies with type of square. Added receive function to Player, need to work more on player's inventory. Also, are we writing a separate player class that the user will be? Fixed Player and Monster classes.

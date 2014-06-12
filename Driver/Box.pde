@@ -44,11 +44,17 @@ public class Box {
     public int getY() {
   return y;
     }
+    
+    public boolean canWalk() {
+      return walkable;
+    }
 
     public void graphics() {
       //depending on type of box, will create rect filled with different image
       image(pic, x*10, y*10, 10, 10);
     }
+    
+    public void action(Player p) {}
 
 
     //need to do graphics part for these
@@ -90,6 +96,8 @@ public class Box {
     }
 
     public class Trap extends Box {
+      
+      int dam;
 
   public Trap(int x, int y) {
       this.x = x;
@@ -98,19 +106,36 @@ public class Box {
       try {
         pic = loadImage("trap.png");
       } catch (Exception e) {}
+      dam = Math.randomInt(5);
   }
 
+  public void action(Player p) {
+    p.setHealth(p.getHealth-dam);
+  }
+  
     }
 
     public class Chest extends Box {
-
+      Item content;      
+      
   public Chest(int x, int y) {
+    content = new Item(Math.randomInt(3) + 1, "Random prize!", Math.randomInt(3), true);
+    
       this.x = x;
       this.y = y;
       this.walkable = true;
       try {
         pic = loadImage("chest.png");
       } catch (Exception e) {}
+  }
+  
+  public Item getContent() {
+    return content;
+  }
+  
+  public void action(Player p) {
+    player.receive(content);
+    content = null;
   }
 
     }
