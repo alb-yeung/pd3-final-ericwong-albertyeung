@@ -99,7 +99,11 @@ void setup(){
 }
 
 void updateBoard() {
-  
+  for (int r=0;r<map.length;r++) {
+      for (int c=0;c<map.length;c++) {
+      	  map[r][c].graphics();
+      }
+  }
 }
 
 void draw(){

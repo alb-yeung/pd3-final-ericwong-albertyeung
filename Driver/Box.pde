@@ -47,7 +47,7 @@ public class Box {
 
     public void graphics() {
       //depending on type of box, will create rect filled with different image
-      image(pic, this.getX(), this.getY(), 10, 10);
+      image(pic, x*10, y*10, 10, 10);
     }
 
 
