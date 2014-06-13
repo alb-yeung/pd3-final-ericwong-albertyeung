@@ -1,16 +1,19 @@
 import java.awt.image.*;
 import javax.imageio.*;
 import java.io.*;
-
-public class Box {
+/*
+public class Box{
 
     boolean walkable;
     int x, y;
     PImage pic;
-
     public Box(){
+      x = 0;
+      y = 0;
     }
-
+    
+    //THIS BLOCK ISNT NEEDED. YOU CAN INSTANTIALIZE BY Box a = new Wall w;
+    /*
     public Box (int n, int x, int y) {
   if (n == 0) {
       Empty e = new Empty(x, y);
@@ -31,7 +34,8 @@ public class Box {
       Chest c = new Chest(x, y);
   }
     }
-
+    */
+    /*
     public Box(int x, int y){
   this.x = x;
   this.y = y;
@@ -106,11 +110,11 @@ public class Box {
       try {
         pic = loadImage("trap.png");
       } catch (Exception e) {}
-      dam = Math.randomInt(5);
+      dam = (int)(Math.random()*5);
   }
 
   public void action(Player p) {
-    p.setHealth(p.getHealth-dam);
+    p.setHealth(p.getHealth()-dam);
   }
   
     }
@@ -119,7 +123,7 @@ public class Box {
       Item content;      
       
   public Chest(int x, int y) {
-    content = new Item(Math.randomInt(3) + 1, "Random prize!", Math.randomInt(3), true);
+    content = new Item((int)(Math.random()*3 + 1), "Random prize!", (int)(Math.random()*3), true);
     
       this.x = x;
       this.y = y;
@@ -133,11 +137,13 @@ public class Box {
     return content;
   }
   
+  /*
   public void action(Player p) {
-    player.receive(content);
+    p.receive(content);
     content = null;
   }
-
+  */
+/*
     }
 
-}
+}*/

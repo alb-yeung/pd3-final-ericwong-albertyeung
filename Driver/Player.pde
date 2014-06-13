@@ -1,12 +1,24 @@
+
 public class Player {
   int x,y;
   String name;
-  int dam, health;
-  MyArrayList<Item> loot;
-  
+  int dam, health, maxhealth;
+  //MyArrayList<Item> loot;
+  public Player(){
+  }
+  public Player(int x, int y){
+    this.x = x;
+    this.y = y;
+  }
   public Player(String n){
     name = n;
-    loot = new Item[10];
+    //loot = new Item[10];
+  }
+  public Player(String n, int i){
+    name = n;
+    health = i;
+    maxhealth = i;
+    dam = 10;
   }
   public void setx(int x){
     this.x = x;
@@ -26,11 +38,12 @@ public class Player {
   public int getHealth() {
     return health;
   }
-  public receive(Item i) {
+  /*
+  public void receive(Item i) {
     loot.add(i);
   }
+
   public void attack(Player p) {
-    p.setHealth(p.gethealth() - dam);
+    p.setHealth(p.getHealth() - dam);
   }
-  
-}}
+}

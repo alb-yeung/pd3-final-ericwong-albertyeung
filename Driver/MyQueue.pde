@@ -1,5 +1,22 @@
 public class MyQueue {
 
+    public class Node{
+     public Box data;
+     public Node next;
+     public Node(Box a){
+       data = a;
+     }
+     public void setNext(Node a){
+       next = a;
+     }
+     public Box getData(){
+       return data;
+     }
+     public Node getNext(){
+       return next;
+     }
+    }
+  
     private Node head,tail;
 
     public MyQueue() {
@@ -35,7 +52,7 @@ public class MyQueue {
 	return (head == null);
     }
 
-    public String front() {
+    public Box front() {
 	if (head == null)
 	    return null;
 	else 

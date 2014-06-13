@@ -1,19 +1,22 @@
 import java.util.*;
 
 char[][] map = new char[60][60];
-ArrayList<Player> players = new ArrayList<Player>();
+//ArrayList<Player> players = new ArrayList<Player>();
 int x = 0;
 int y = 0;
-boolean newkey = false;
+boolean movekey = false;
+boolean testkey = false;
 int fillcolor = 0;
-MyQueue fronteir = new MyQueue();
+int testHealth = 20;
+//MyQueue fronteir = new MyQueue();
 //
 
-
+/*
 void place(Player a,int x, int y){
   a.setx(x);
   a.sety(y);
 }
+*/
 
 void reveal(int x, int y){
   //make a frontier
@@ -27,6 +30,12 @@ void setup(){
   noStroke();
   background(0);
   fillcolor = 126;
+  
+  rect(20,620,220,40);
+  fill(255,0,0);
+  rect(30,630,200,20);
+  fill(0,255,0);
+  rect(30,630,testHealth*10,20);
   
   //read the board in
   /*
@@ -111,12 +120,21 @@ void setup(){
   */
 }
 
+/*
 void updateBoard() {
   for (int r=0;r<map.length;r++) {
       for (int c=0;c<map.length;c++) {
       	  map[r][c].graphics();
       }
   }
+}
+*/
+
+void updateHealth(){
+  fill(255,0,0);
+  rect(30,630,200,20);
+  fill(0,255,0);
+  rect(30,630,testHealth*10,20);
 }
 
 void draw(){
@@ -131,38 +149,55 @@ void draw(){
      }
    }
    */
-   if(newkey == true){
+   if(movekey == true){
      fill(fillcolor);
      rect(x,y,10,10);
-     newkey = false;
+     movekey = false;
+   }
+   if(testkey == true){
+     updateHealth();
+     System.out.println(testHealth);
+     testkey = false;
    }
      
 }
 
 //added checking to make sure the move is possible
+
 void keyPressed(){
   System.out.println(key);
   if(key == 's'){
-    if (map[x][y+1].canWalk() && !((y+1)>59)) {
+    //if (map[x][y+1].canWalk() && !((y+1)>59)) {
       y = y+10;
-      newkey = true;
-    }
+      if(y >= 600)
+        y = 600;
+      movekey = true;
   }else if(key == 'd'){
-    if (map[x+1][y].canWalk() && !((x+1)>59)) {
+    //if (map[x+1][y].canWalk() && !((x+1)>59)) {
       x = x + 10;
-      newkey = true;
-    }
+      if(x>-600)
+        x = 600;
+      movekey = true;
   }else if(key == 'a'){
-    if (map[x-1][y].canWalk() && !((x-1)<0)) {
+    //if (map[x-1][y].canWalk() && !((x-1)<0)) {
       x = x - 10;
-      newkey = true;
-    }
+      if(x <= 0)
+        x = 0;
+      movekey = true;
   }else if(key == 'w'){
-    if (map[x][y-1].canWalk() && !((y-1)<0)) {
+    //if (map[x][y-1].canWalk() && !((y-1)<0)) {
       y = y - 10;
-      newkey = true;
-    }
+      if(y <= 0)
+        y = 0;
+      movekey = true;
   }else if(key =='j'){
-    fillcolor = (int)(Math.random()*255);
+    //fillcolor = (int)(Math.random()*255);
+    testHealth -= 1;
+    if(testHealth<=0)
+      testHealth = 0;
+    testkey = true;
+  }else if(key == 'k'){
+    testHealth = 20;
+    testkey = true;
   }
 }

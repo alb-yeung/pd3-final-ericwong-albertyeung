@@ -30,8 +30,10 @@ public class Monster extends Player {
 		tempY = y + b;
 		dist = (tempX-targetX)*(tempX-targetX) + (tempY-targetY)*(tempY-targetY);
 		//add onto ordering only if the square can be walked upon
+                /*WHAT IS MAP
 		if (map[a][b].walkable())
 		    order.set(dist, map[a][b]);
+                */
 	    }
 	}
 

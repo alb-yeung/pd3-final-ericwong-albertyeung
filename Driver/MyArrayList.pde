@@ -4,8 +4,8 @@ public class MyArrayList {
     private int size;
 
     public MyArrayList() {
-  stuff = new Item[20];
-  size = 0;
+      //stuff =  Item[20];
+      size = 0;
     }
 
     public void grow() {
@@ -25,7 +25,7 @@ public class MyArrayList {
       return true;
   }
     }
-
+/*
     public Item remove(int index) {
   Item temp = stuff[index];
   for (int i=index;i<stuff.length-1;i++) {
@@ -33,5 +33,5 @@ public class MyArrayList {
   }
   return temp;
     }
-
+*/
 }

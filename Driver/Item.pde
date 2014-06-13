@@ -42,7 +42,7 @@ public class Item{
     private boolean health;
     private int healby;
     public Usable(int a,boolean s,int d){
-      Super("Potion");
+      //Super("Potion");
       amt = a;
       health = s;
       healby = d;
