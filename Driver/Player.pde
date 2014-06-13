@@ -29,5 +29,8 @@ public class Player {
   public receive(Item i) {
     loot.add(i);
   }
+  public void attack(Player p) {
+    p.setHealth(p.gethealth() - dam);
+  }
   
 }}
