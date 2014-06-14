@@ -1,12 +1,13 @@
 import java.util.*;
 
-char[][]map = new char[60][60];
+Box[][]map = new Box[60][60];
 
 boolean movekey = false;
 boolean testkey = false;
 int fillcolor = 0;
 int testHealth = 20;
 int x,y;
+Frontier area = new Frontier();
 
 Player testPlayer = new Player("Bob",20);
 
@@ -25,6 +26,16 @@ void updateHealth(){
   rect(30,630,200,20);
   fill(0,255,0);
   rect(30,630,testPlayer.healthPercent()*10,20);
+}
+
+void updateVision(){
+  fill(255,255,255);
+  
+  Box temp;
+  while(area.isEmpty()==false){
+    temp = area.dequeue();
+    rect(temp.getX(),temp.getY(),10,10);
+  } 
 }
 
 void draw(){
