@@ -28,3 +28,5 @@ Albert Yeung		6.13.2014			Commented out a lot of stuff that didn't work in Playe
 Eric Wong			6.13.2014			Did some minor work at school, mostly spent the period trying to locate and resolve the errors that the processing compiler claimed there were but couldn't find any. Couldn't ssh into school and couldn't push at school but not too big a deal since not much was changed
 
 Albert Yeung		6.14.2014			Made seperate folder which actually works. The moving and the visual health bar are testable. Not sure how to add the Boxes onto the frontier.
+
+Eric Wong			6.15.2014			Read in map and convert from char[][] to box[][]. Need to fix box classes to differentiate between different types. Everything runs without errors :) Will most likely work on more later tonight.

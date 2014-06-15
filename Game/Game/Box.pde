@@ -11,7 +11,8 @@ public class Box{
       x = 0;
       y = 0;
     }
-    public Box(int x, int y){
+    public Box(int n, int x, int y){
+      //n will determine what type of box
       this.x = x;
       this.y = y;
     }

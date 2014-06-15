@@ -17,8 +17,43 @@ void setup(){
   background(0);
   fillcolor = 126;
   
+  //reading board in
+  char[][] temp = new char[60][60];
+  try {
+    File f = new File("map.txt");
+    Scanner sc = new Scanner(f);
+    String next;
+    while (sc.hasNextLine()) {
+      next = sc.nextLine();
+      for (int x=0;x<60;x++) {
+        for (int y=0;y<60;y++) {
+          temp[x][y] = next.charAt(y);          
+        }
+      }
+    }
+  } catch (Exception e) {}
+  
+  //convert chars into boxes
+  Box[][] map = new Box[60][60];
+  for (int x=0;x<60;x++) {
+    for (int y=0;y<60;y++) {
+      map[x][y] = new Box(temp[x][y], x, y);      
+    }
+  }
+  
   rect(20,620,220,40);
   updateHealth();
+}
+
+//this method will update graphics
+//might need to alter to take in Player parameter so only reveal
+//things within a 2-3 radius of it will be easy to fix
+void updateBoard() {
+  for (int x=0;x<60;x++) {
+    for (int y=0;y<60;y++) {
+      map[x][y].graphics();
+    }
+  }
 }
 
 void updateHealth(){
