@@ -5,6 +5,7 @@ public class Monster extends Player {
     private MyQueue frontier;
     private int dam, health;
     private int x, y;
+    private PImage pic;
 
     public Monster(int x, int y) {
 	this.x = x;
@@ -12,6 +13,9 @@ public class Monster extends Player {
 	frontier = new MyQueue();
 	dam = (int)(Math.random()*5);
 	health = 10 + (int)(Math.random()*15);
+        try {
+          pic = loadImage("monster.png");
+        } catch (Exception e) {}
     }
 
     public void move(Player p) {

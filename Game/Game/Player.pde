@@ -2,11 +2,15 @@ public class Player{
   int x,y;
   String name;
   int dam, health, maxhealth;
+  PImage pic;
   
   public Player(){}
   public Player(int x, int y){
     this.x = x;
     this.y = y;
+    try {
+      pic = loadImage("player.png");
+    } catch (Exception e) {}
   }
   public Player(String n){
     name = n;

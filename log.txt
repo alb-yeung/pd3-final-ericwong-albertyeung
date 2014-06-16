@@ -30,3 +30,5 @@ Eric Wong			6.13.2014			Did some minor work at school, mostly spent the period t
 Albert Yeung		6.14.2014			Made seperate folder which actually works. The moving and the visual health bar are testable. Not sure how to add the Boxes onto the frontier.
 
 Eric Wong			6.15.2014			Read in map and convert from char[][] to box[][]. Need to fix box classes to differentiate between different types. Everything runs without errors :) Will most likely work on more later tonight.
+
+Eric Wong			6.16.2014			Created the extensions to Box class and all the methods regarding graphics. HOwever, for some reason, the pde is not importing the files we ask it to load. They seem to be in the right folder and location and everything but it just won't load. Need to figure this out. Everything runs.

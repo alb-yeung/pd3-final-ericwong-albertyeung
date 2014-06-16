@@ -27,22 +27,29 @@ void setup(){
       next = sc.nextLine();
       for (int x=0;x<60;x++) {
         for (int y=0;y<60;y++) {
+          System.out.println(next.charAt(y));
           temp[x][y] = next.charAt(y);          
         }
       }
     }
-  } catch (Exception e) {}
+  } catch (Exception e) {System.out.println("still didnt read");}
   
   //convert chars into boxes
-  Box[][] map = new Box[60][60];
   for (int x=0;x<60;x++) {
     for (int y=0;y<60;y++) {
-      map[x][y] = new Box(temp[x][y], x, y);      
+      map[x][y] = new Box(temp[x][y], x, y);     
     }
   }
   
   rect(20,620,220,40);
   updateHealth();
+  
+  //running the game
+  game();
+}
+
+void game() {
+ updateBoard(); 
 }
 
 //this method will update graphics
