@@ -9,7 +9,6 @@ boolean testkey = false;
 int fillcolor = 0;
 int testHealth = 20;
 //MyQueue fronteir = new MyQueue();
-//
 
 /*
 void place(Player a,int x, int y){
