@@ -4,6 +4,11 @@ public class Player{
   int dam, health, maxhealth;
   PImage pic;
   
+  Armor armor;
+  Usable hpot;
+  Usable mpot;
+  Weapon weapon;
+  
   public Player(){}
   public Player(int x, int y){
     this.x = x;
@@ -47,9 +52,10 @@ public class Player{
     health -= n;
   }
   public void attack(Player p) {
-    p.takeDamage(dam);
-    if(health < 0){
-      health = 0;
+    int totaldamage = dam + weapon.getDamage();
+    p.takeDamage(totaldamage);
+    if(p.getHealth() < 0){
+      p.setHealth(0);
     }
   }
   public int healthPercent(){
