@@ -48,6 +48,9 @@ public class Player{
   public int getHealth(){
     return health;
   }
+  public boolean alive() {
+   return !(health==0); 
+  }
   public void takeDamage(int n){
     health -= n;
   }

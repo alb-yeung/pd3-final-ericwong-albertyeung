@@ -6,10 +6,12 @@ public class Monster extends Player {
     private int dam, health;
     private int x, y;
     private PImage pic;
+    private Map m;
 
-    public Monster(int x, int y) {
+    public Monster(int x, int y, Map m) {
 	this.x = x;
 	this.y = y;
+        this.m = m;
 	frontier = new MyQueue();
 	dam = (int)(Math.random()*5);
 	health = 10 + (int)(Math.random()*15);
@@ -34,10 +36,8 @@ public class Monster extends Player {
 		tempY = y + b;
 		dist = (tempX-targetX)*(tempX-targetX) + (tempY-targetY)*(tempY-targetY);
 		//add onto ordering only if the square can be walked upon
-                /*WHAT IS MAP
-		if (map[a][b].walkable())
-		    order.set(dist, map[a][b]);
-                */
+		if (m.get(a,b).canWalk())
+		    order.set(dist, m.get(a,b));
 	    }
 	}
 

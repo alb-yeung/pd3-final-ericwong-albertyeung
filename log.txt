@@ -34,3 +34,5 @@ Eric Wong			6.15.2014			Read in map and convert from char[][] to box[][]. Need t
 Eric Wong			6.16.2014			Created the extensions to Box class and all the methods regarding graphics. HOwever, for some reason, the pde is not importing the files we ask it to load. They seem to be in the right folder and location and everything but it just won't load. Need to figure this out. Everything runs.
 
 Albert Yeung		6.16.2014			Everything still runs and moved the rest of the files over. I'm not sure how you decide to make the Driver work so I didn't touch it.
+
+Eric Wong			6.16.2014			Created map class so that the map can be universal. Added more functions to the driver to run the game like adding player and monster randomly. Still cannot figure out how to get the code to read the files!!!! program doesnt have error but not sure if theres an infinite loop somewhere. Shouldn't be one though.
